@@ -58,6 +58,46 @@ function hourAndMinutes() {
 
 hourAndMinutes();
 
+function currentDate() {
+  let dateElement = document.querySelector("#date");
+  let currentDate = date.getDate();
+  dateElement.innerHTML = currentDate;
+}
+
+currentDate();
+
+let months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+let month = months[date.getMonth()];
+
+function currentMonth() {
+  let monthElement = document.querySelector("#month");
+  monthElement.innerHTML = month;
+}
+
+currentMonth();
+
+function year() {
+  let currentYear = date.getFullYear();
+  let yearElement = document.querySelector("#year");
+  yearElement.innerHTML = currentYear;
+}
+
+year();
+
 function feelsLike(response) {
   let feelsLike = document.querySelector("#feels-like");
   let feelsLikeElement = Math.round(response.data.temperature.feels_like);
