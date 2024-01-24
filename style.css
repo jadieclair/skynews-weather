@@ -1,0 +1,157 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  text-shadow: 0 0 18px rgb(8, 8, 8);
+  color: #fff;
+  /* background: rgb(60, 61, 61); */
+  background: radial-gradient(
+    circle at center,
+    rgb(151, 150, 150),
+    rgb(93, 94, 94),
+    rgb(48, 50, 50)
+  );
+}
+
+h1 {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 60px;
+  font-weight: 600;
+}
+
+h2 {
+  margin: 20px 0 0 40px;
+}
+
+h3 {
+  font-size: 16px;
+  transform: rotate(90deg);
+  position: absolute;
+  margin-left: -90px;
+  margin-top: 100px;
+  letter-spacing: 3px;
+}
+
+ul {
+  display: flex;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  list-style-type: none;
+  flex-direction: column;
+  padding: 6px;
+}
+
+hr {
+  margin: 5px;
+}
+
+form {
+  font-weight: 400;
+  font-size: 12px;
+  padding: 5px;
+}
+
+p {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+a {
+  color: rgb(111, 171, 213);
+}
+
+footer {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: rgb(111, 171, 213);
+}
+
+#city {
+  width: 70%;
+  border: none;
+  outline: none;
+  font-size: 12px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  color: rgb(111, 171, 213);
+}
+
+#search {
+  margin-left: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #fff;
+  color: rgb(153, 152, 152);
+  font-size: 12px;
+  padding: 5px 8px;
+}
+
+#search:hover {
+  background-color: rgb(135, 180, 213);
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 4px 7px;
+  cursor: pointer;
+}
+
+.project {
+  position: relative;
+  display: block;
+  margin: 40px auto;
+  max-width: 300px;
+  min-height: 550px;
+  border-radius: 30px;
+  padding: 12px;
+  background: url(skyline.jpg) no-repeat center center;
+  background-size: cover;
+  border: 3px solid rgb(125, 159, 182);
+  overflow: hidden;
+  opacity: 0.7;
+}
+
+.forecast {
+  text-align: center;
+  background-color: #fff;
+  color: black;
+  position: relative;
+  top: 5px;
+  border-radius: 20px 20px 0 0;
+  height: 55px;
+}
+
+#emoji {
+  width: 40px;
+  height: 40px;
+  margin: 0 40px 15px 0;
+}
+
+.temperature p {
+  align-self: flex-end;
+}
+
+.temperature {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.temperature svg {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 8px;
+  align-items: right;
+}
+
+.location {
+  width: 25px;
+}
