@@ -9,8 +9,9 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <title>Sky News Weather</title>
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <title>Sky News Weather</title>
+
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -29,7 +30,7 @@
       </header>
       <main>
         <!-- <span>⛈ ༄ ☼ ❆ ☁︎ ☼</span> -->
-        <h3>Scattered showers</h3>
+        <h3 id="conditions">Scattered showers</h3>
         <div class="input-location">
           <i>
             <svg
@@ -49,46 +50,74 @@
               />
             </svg>
           </i>
-          <h2 id="location">Paris</h2>
+          <h2 id="location"></h2>
         </div>
         <div class="temperature">
           <h1>
             <span id="emoji">༄</span>
-            <span class="temperature-unit" id="units"> 10°<sup>c</sup></span>
+            <div class="show-temp">
+              <span class="temperature-display" id="units"></span>
+              <span class="temperature-unit"><sup>°C</sup></span>
+            </div>
           </h1>
           <p>
-            Tuesday <br />
-            10 January 2024 <br />
-            14h30
+            <span id="day">Tuesday</span>
+            <br />
+            <span>10 January 2024</span>
+            <br />
+            <span id="hourAndMinutes"></span>
           </p>
         </div>
         <div class="forecast">
           <ul>
             <li class="li">
-              <span>Feels Like:</span>
-              <span>5°C</span>
-              <span>🥶</span>
+              <div class="additional-temperature">
+                <span>Feels Like:</span>
+                <div class="grouping">
+                  <span id="feels-like"></span>
+                  <span class="temperature-unit">°C</span>
+                  <span class="grouping-emoji">🔎</span>
+                </div>
+              </div>
             </li>
             <hr />
             <li class="li">
-              <span> Wind:</span>
-              <span>10kph</span>
-              <span> 🌬️</span>
+              <div class="additional-temperature">
+                <span> Wind:</span>
+                <div class="grouping">
+                  <span id="wind-speed"></span>
+                  <span>kp/h</span>
+
+                  <span class="grouping-emoji">🌬️</span>
+                </div>
+              </div>
             </li>
             <hr />
             <li class="li">
-              <span> Humidity:</span>
-              <span>8%</span>
-              <span>💧</span>
+              <div class="additional-temperature">
+                <span>Humidity:</span>
+                <div class="grouping">
+                  <span id="humidity"></span>
+                  <span>%</span>
+                  <span class="grouping-emoji">💧</span>
+                </div>
+              </div>
             </li>
           </ul>
         </div>
       </main>
     </div>
     <footer>
-      Designed by <a href="https://github.com/jadieclair">Jade Harris</a> using
-      <a href="https://github.com/jadieclair/skynews-weather.git">GitHub</a> and
-      hosted on <a href="https://skynews-weather.netlify.app/">Netlify</a>
+      Designed by
+      <a href="https://github.com/jadieclair" target="_blank">Jade Harris</a>
+      using
+      <a
+        href="https://github.com/jadieclair/skynews-weather.git"
+        target="_blank"
+        >GitHub</a
+      >
+      and hosted on
+      <a href="https://skynews-weather.netlify.app/" target="_blank">Netlify</a>
     </footer>
     <script src="script.js"></script>
   </body>

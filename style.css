@@ -5,11 +5,10 @@ body {
   font-family: "Montserrat", sans-serif;
   text-shadow: 0 0 18px rgb(8, 8, 8);
   color: #fff;
-  /* background: rgb(60, 61, 61); */
   background: radial-gradient(
     circle at center,
-    rgb(151, 150, 150),
-    rgb(93, 94, 94),
+    rgb(219, 217, 217),
+    rgb(127, 129, 129),
     rgb(48, 50, 50)
   );
 }
@@ -23,28 +22,28 @@ h1 {
   font-weight: 600;
 }
 
-/* h2 {
-  margin: 20px 0 0 40px;
-} */
+h2 {
+  margin: 0;
+}
 
 h3 {
   font-size: 16px;
   transform: rotate(90deg);
   position: absolute;
-  margin-left: -90px;
-  margin-top: 100px;
+  top: 45%;
+  margin-top: -50px;
+  margin-left: -50px;
   letter-spacing: 3px;
 }
 
 ul {
   display: flex;
-  padding: 0;
-  overflow: hidden;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 li {
   list-style-type: none;
-  flex-direction: column;
   padding: 6px;
 }
 
@@ -84,7 +83,7 @@ footer {
   font-size: 12px;
   padding: 5px 8px;
   border-radius: 5px;
-  color: rgb(111, 171, 213);
+  color: rgb(123, 175, 212);
 }
 
 #search {
@@ -98,7 +97,7 @@ footer {
 }
 
 #search:hover {
-  background-color: rgb(135, 180, 213);
+  background-color: rgb(165, 195, 215);
   border: 1px solid #fff;
   color: #fff;
   padding: 4px 7px;
@@ -134,17 +133,14 @@ footer {
   position: relative;
   top: 5px;
   border-radius: 20px 20px 0 0;
-  height: 55px;
+  height: 70px;
+  font-size: 14px;
 }
 
 #emoji {
-  width: 40px;
-  height: 40px;
-  margin: 0 40px 15px 0;
-}
-
-.temperature-unit {
-  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  margin: 0 40px 40px 0;
 }
 
 .temperature p {
@@ -154,18 +150,28 @@ footer {
 .temperature {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-}
-
-.temperature svg {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  margin-bottom: 8px;
   align-items: right;
+  font-weight: bold;
 }
 
 .location {
   width: 25px;
   margin-right: 5px;
+}
+
+.temperature-display {
+  font-size: 75px;
+}
+
+.grouping-emoji {
+  margin-left: 10px;
+}
+
+.additional-temperature {
+  display: flex;
+  flex-direction: column;
+}
+
+.grouping {
+  display: flex;
 }
