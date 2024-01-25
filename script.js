@@ -17,110 +17,73 @@ function updateTemp(response) {
   let currentTemp = document.querySelector("#units");
   let unitTemp = response.data.temperature.current;
   let h2 = document.querySelector("#location");
-  h2.innerHTML = response.data.city;
-  currentTemp.innerHTML = Math.round(unitTemp);
-  windSpeed(response);
-  feelsLike(response);
-  humidity(response);
-  conditions(response);
-}
-
-let date = new Date();
-
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-
-let day = days[date.getDay()];
-
-function showDay() {
-  let dayElement = document.querySelector("#day");
-  dayElement.innerHTML = day;
-}
-
-showDay();
-
-function hourAndMinutes() {
-  let currentHour = date.getHours();
-  let currentMinutes = date.getMinutes();
-
-  let currentTime = `${currentHour}h${currentMinutes}`;
-
-  let hourAndMinutes = document.querySelector("#hourAndMinutes");
-  hourAndMinutes.innerHTML = currentTime;
-}
-
-hourAndMinutes();
-
-function currentDate() {
-  let dateElement = document.querySelector("#date");
-  let currentDate = date.getDate();
-  dateElement.innerHTML = currentDate;
-}
-
-currentDate();
-
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-
-let month = months[date.getMonth()];
-
-function currentMonth() {
-  let monthElement = document.querySelector("#month");
-  monthElement.innerHTML = month;
-}
-
-currentMonth();
-
-function year() {
-  let currentYear = date.getFullYear();
-  let yearElement = document.querySelector("#year");
-  yearElement.innerHTML = currentYear;
-}
-
-year();
-
-function feelsLike(response) {
-  let feelsLike = document.querySelector("#feels-like");
-  let feelsLikeElement = Math.round(response.data.temperature.feels_like);
-  feelsLike.innerHTML = feelsLikeElement;
-}
-
-function windSpeed(response) {
   let wind = document.querySelector("#wind-speed");
-  let windElement = response.data.wind.speed;
-  wind.innerHTML = Math.round(windElement);
-  console.log(response);
-}
-
-function humidity(response) {
+  let feelsLike = document.querySelector("#feels-like");
   let humidity = document.querySelector("#humidity");
-  let humidityElement = Math.round(response.data.temperature.humidity);
-  humidity.innerHTML = humidityElement;
+  let conditions = document.querySelector("#conditions");
+  let time = document.querySelector("#hourAndMinutes");
+  let day = document.querySelector("#day");
+  let monthElement = document.querySelector("#month");
+  let yearElement = document.querySelector("#year");
+  let date = new Date(response.data.time * 1000);
+  let icon = document.querySelector("#icon");
+
+  h2.innerHTML = response.data.city;
+  currentTemp.innerHTML = `${Math.round(unitTemp)}°C`;
+  wind.innerHTML = `${Math.round(response.data.wind.speed)}Km/h`;
+  feelsLike.innerHTML = `${Math.round(response.data.temperature.feels_like)}°C`;
+  humidity.innerHTML = `${Math.round(response.data.temperature.humidity)}%`;
+  conditions.innerHTML = response.data.condition.description;
+  time.innerHTML = showTime(date);
+  day.innerHTML = showDay(date);
+  monthElement.innerHTML = showMonth(date);
+  yearElement.innerHTML = date.getFullYear();
+  icon.innerHTML = `<img src="${response.data.condition.icon_url}" class="emoji"/>`;
 }
 
-function conditions(response) {
-  let condition = document.querySelector("#conditions");
-  let conditionsElement = response.data.condition.description;
-  condition.textContent = conditionsElement;
+function showDay(date) {
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+
+  return day;
+}
+
+function showMonth(date) {
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let month = months[date.getMonth()];
+
+  return month;
+}
+
+function showTime(date) {
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+
+  hours = hours < 10 ? "0" + hours : hours;
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+
+  return `${hours}h${minutes}`;
 }
 
 fetchTemp("London");

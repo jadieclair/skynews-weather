@@ -14,12 +14,12 @@ body {
 }
 
 h1 {
-  margin: 0;
+  margin: 12px 0 0 0;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  font-size: 60px;
-  font-weight: 600;
+  font-size: 50px;
+  font-weight: 500;
 }
 
 h2 {
@@ -30,10 +30,14 @@ h3 {
   font-size: 16px;
   transform: rotate(90deg);
   position: absolute;
-  top: 45%;
-  margin-top: -50px;
-  margin-left: -50px;
   letter-spacing: 3px;
+  margin-right: auto;
+}
+
+.conditions-heading {
+  display: inline-block;
+  position: fixed;
+  top: 30%;
 }
 
 ul {
@@ -137,30 +141,29 @@ footer {
   font-size: 14px;
 }
 
-#emoji {
-  width: 50px;
-  height: 50px;
-  margin: 0 40px 40px 0;
+.emoji {
+  display: block;
+  margin-left: auto;
+  width: 75px;
+  height: 75px;
+  padding: 5px;
 }
 
-.temperature p {
-  align-self: flex-end;
+.currentTemp {
+  display: flex;
 }
 
 .temperature {
   display: flex;
   flex-direction: column;
-  align-items: right;
+  align-items: flex-end;
   font-weight: bold;
+  padding: 10px;
 }
 
 .location {
   width: 25px;
   margin-right: 5px;
-}
-
-.temperature-display {
-  font-size: 75px;
 }
 
 .grouping-emoji {
@@ -170,6 +173,8 @@ footer {
 .additional-temperature {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .grouping {
