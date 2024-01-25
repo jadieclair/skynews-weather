@@ -13,6 +13,15 @@ body {
   );
 }
 
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 12px;
+  padding: 5px;
+}
+
 h1 {
   margin: 12px 0 0 0;
   display: flex;
@@ -20,30 +29,28 @@ h1 {
   align-items: flex-end;
   font-size: 50px;
   font-weight: 500;
+  line-height: 50px;
 }
 
 h2 {
+  text-align: center;
   margin: 0;
+  font-size: 18px;
 }
 
 h3 {
-  font-size: 16px;
-  transform: rotate(90deg);
-  position: absolute;
-  letter-spacing: 3px;
-  margin-right: auto;
-}
-
-.conditions-heading {
-  display: inline-block;
-  position: fixed;
-  top: 30%;
+  left: auto;
+  white-space: nowrap;
+  font-family: "Kalam", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 ul {
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  margin: 0;
 }
 
 li {
@@ -53,15 +60,6 @@ li {
 
 hr {
   margin: 5px;
-}
-
-form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 400;
-  font-size: 12px;
-  padding: 5px;
 }
 
 p {
@@ -78,6 +76,35 @@ footer {
   display: block;
   text-align: center;
   margin-top: 10px;
+}
+
+.project {
+  position: relative;
+  display: block;
+  margin: 20px auto;
+  max-width: 300px;
+  min-height: 540px;
+  border-radius: 30px;
+  padding: 12px;
+  background: url(skyline.jpg) no-repeat center center;
+  background-size: cover;
+  border: 3px solid rgb(125, 159, 182);
+  overflow: hidden;
+  opacity: 0.7;
+}
+
+.conditions-heading {
+  position: fixed;
+  top: 18%;
+}
+
+#conditions {
+  font-size: 18px;
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+  letter-spacing: 1px;
+  margin-left: 5px;
 }
 
 #city {
@@ -108,26 +135,32 @@ footer {
   cursor: pointer;
 }
 
-.input-location {
+.location-pin {
   display: flex;
   align-items: center;
-  justify-content: left;
   margin: 20px 0 0 40px;
 }
 
-.project {
-  position: relative;
-  display: block;
-  margin: 20px auto;
-  max-width: 300px;
-  min-height: 540px;
-  border-radius: 30px;
-  padding: 12px;
-  background: url(skyline.jpg) no-repeat center center;
-  background-size: cover;
-  border: 3px solid rgb(125, 159, 182);
-  overflow: hidden;
-  opacity: 0.7;
+.location-icon {
+  width: 25px;
+  margin-right: 5px;
+}
+
+.temperature {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-weight: bold;
+  padding: 10px;
+  margin-top: 15px;
+}
+
+.currentTemp {
+  display: flex;
+}
+
+.emoji {
+  width: 80px;
 }
 
 .forecast {
@@ -138,36 +171,7 @@ footer {
   top: 5px;
   border-radius: 20px 20px 0 0;
   height: 70px;
-  font-size: 14px;
-}
-
-.emoji {
-  display: block;
-  margin-left: auto;
-  width: 75px;
-  height: 75px;
-  padding: 5px;
-}
-
-.currentTemp {
-  display: flex;
-}
-
-.temperature {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  font-weight: bold;
-  padding: 10px;
-}
-
-.location {
-  width: 25px;
-  margin-right: 5px;
-}
-
-.grouping-emoji {
-  margin-left: 10px;
+  font-size: 13px;
 }
 
 .additional-temperature {
@@ -177,6 +181,6 @@ footer {
   justify-content: center;
 }
 
-.grouping {
-  display: flex;
+.grouping-emoji {
+  margin-left: 10px;
 }
