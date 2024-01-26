@@ -39,6 +39,8 @@ function updateTemp(response) {
   monthElement.innerHTML = showMonth(date);
   yearElement.innerHTML = date.getFullYear();
   icon.innerHTML = `<img src="${response.data.condition.icon_url}" class="emoji"/>`;
+
+  getForecast(response.data.city);
 }
 
 function showDay(date) {
@@ -86,29 +88,47 @@ function showTime(date) {
   return `${hours}h${minutes}`;
 }
 
-function showForecast() {
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri"];
+function getForecast(city) {
+  let key = `b9df0ato5f746953eaf6201671625960`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${key}&units=metric`;
+  axios.get(apiUrl).then(showForecast);
+}
+
+function forecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
+
+function showForecast(response) {
   let forecastHTML = "";
 
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  response.data.daily.forEach(function (day, index) {
+    console.log(response.data);
+    if (index < 7) {
+      forecastHTML =
+        forecastHTML +
+        `
          <div class="row">
               <div class="col-2">
-                <div class="weather-forecast-day">${day}</div>
+                <div class="weather-forecast-day">${forecastDay(day.time)}</div>
                 <img
-                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-night.png"
-                  width="40px"
-                  alt=""
+                  src=${day.condition.icon_url}
+                 class="weekly-forecast-icon"      
                 />
-                <div>
-                  <span class="weather-forecast-max"> 18 </span>
-                  <span class="weather-forecast-min"> 12 </span>
+                <div class="forecast-daily-readings">
+                  <span class="weather-forecast-max">${Math.round(
+                    day.temperature.maximum
+                  )}°</span>
+                  <span class="weather-forecast-min">${Math.round(
+                    day.temperature.minimum
+                  )}°</span>
                 </div>
               </div>
             </div>
 `;
+    }
   });
 
   let forecastElement = document.querySelector("#weekly-forecast");
@@ -116,4 +136,3 @@ function showForecast() {
 }
 
 fetchTemp("London");
-showForecast();

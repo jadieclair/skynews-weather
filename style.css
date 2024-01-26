@@ -7,7 +7,7 @@ body {
   color: #fff;
   background: radial-gradient(
     circle at center,
-    rgb(219, 217, 217),
+    rgb(250, 248, 248),
     rgb(127, 129, 129),
     rgb(48, 50, 50)
   );
@@ -36,6 +36,7 @@ h2 {
   text-align: center;
   margin: 0;
   font-size: 18px;
+  text-shadow: 6px 4px 4px #4896c9;
 }
 
 h3 {
@@ -86,7 +87,7 @@ footer {
   min-height: 540px;
   border-radius: 30px;
   padding: 10px;
-  background: url(skyline.jpg) no-repeat center center;
+  background: url(media/skyline.jpg) no-repeat center center;
   background-size: cover;
   border: 3px solid rgb(125, 159, 182);
   overflow: hidden;
@@ -165,11 +166,11 @@ footer {
 
 .weather-forecast-daily {
   text-align: center;
-  background-color: #fff;
-  color: black;
+  backdrop-filter: blur(15px);
+  color: #fff;
   position: relative;
   top: 5px;
-  border-radius: 20px 20px 0 0;
+  border-radius: 20px;
   height: 70px;
   font-size: 13px;
 }
@@ -187,7 +188,7 @@ footer {
 
 .weekly-forecast-header {
   font-size: 20px;
-  margin: 50px 0 0 0;
+  margin: 40px 0 0 0;
   padding-left: 10px;
 }
 
@@ -202,6 +203,7 @@ footer {
 
 .row {
   overflow: hidden;
+  line-height: 18px;
 }
 
 .col-2 {
@@ -211,4 +213,25 @@ footer {
   padding: 8px 3px 8px 3px;
   margin: 3px;
   border: 1px solid #fff;
+}
+
+.weekly-forecast-icon {
+  width: 30px;
+  height: 30px;
+  display: block;
+  margin: 0 auto;
+}
+
+.weather-forecast-day {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.weather-forecast-max {
+  font-weight: bold;
+}
+
+.forecast-daily-readings {
+  display: flex;
+  flex-direction: column;
 }
