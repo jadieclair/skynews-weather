@@ -52,57 +52,79 @@
           </i>
           <h2 id="location"></h2>
         </div>
-        <div class="temperature">
-          <p>
-            <span id="day"></span>
-            <br />
-            <span id="date"></span>
-            <span id="month"></span>
-            <span id="year"></span>
-            <br />
-            <span id="hourAndMinutes"></span>
-          </p>
-          <div class="currentTemp">
-            <div id="icon"></div>
-            <h1>
-              <span class="temperature-display" id="units"></span>
-              <span class="temperature-unit"></span>
-            </h1>
+        <section>
+          <div class="temperature">
+            <p>
+              <span id="day"></span>
+              <br />
+              <span id="date"></span>
+              <span id="month"></span>
+              <span id="year"></span>
+              <br />
+              <span id="hourAndMinutes"></span>
+            </p>
+            <div class="currentTemp">
+              <div id="icon"></div>
+              <h1>
+                <span class="temperature-display" id="units"></span>
+                <span class="temperature-unit"></span>
+              </h1>
+            </div>
           </div>
-        </div>
-        <div class="forecast">
-          <ul>
-            <li class="li">
-              <div class="additional-temperature">
-                <span>Feels Like:</span>
-                <div class="grouping">
-                  <span id="feels-like"></span>
-                  <span class="grouping-emoji">🔎</span>
+        </section>
+        <section>
+          <div class="weather-forecast-daily">
+            <ul>
+              <li class="li">
+                <div class="additional-temperature">
+                  <span>Feels Like:</span>
+                  <div class="grouping">
+                    <span id="feels-like"></span>
+                    <span class="grouping-emoji">🔎</span>
+                  </div>
+                </div>
+              </li>
+              <hr />
+              <li class="li">
+                <div class="additional-temperature">
+                  <span>Wind:</span>
+                  <div class="grouping">
+                    <span id="wind-speed"></span>
+                    <span class="grouping-emoji">🌬️</span>
+                  </div>
+                </div>
+              </li>
+              <hr />
+              <li class="li">
+                <div class="additional-temperature">
+                  <span>Humidity:</span>
+                  <div class="grouping">
+                    <span id="humidity"></span>
+                    <span class="grouping-emoji">💧</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="weather-forecast-weekly">
+            <div class="row">
+              <div class="col-2">
+                <div class="weather-forecast-day">Thur</div>
+                <img
+                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-night.png"
+                  width="40px"
+                  alt=""
+                />
+                <div>
+                  <span class="weather-forecast-max"> 18 </span>
+                  <span class="weather-forecast-min"> 12 </span>
                 </div>
               </div>
-            </li>
-            <hr />
-            <li class="li">
-              <div class="additional-temperature">
-                <span>Wind:</span>
-                <div class="grouping">
-                  <span id="wind-speed"></span>
-                  <span class="grouping-emoji">🌬️</span>
-                </div>
-              </div>
-            </li>
-            <hr />
-            <li class="li">
-              <div class="additional-temperature">
-                <span>Humidity:</span>
-                <div class="grouping">
-                  <span id="humidity"></span>
-                  <span class="grouping-emoji">💧</span>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
     <footer>
