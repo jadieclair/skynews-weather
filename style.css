@@ -85,7 +85,7 @@ footer {
   max-width: 300px;
   min-height: 540px;
   border-radius: 30px;
-  padding: 12px;
+  padding: 10px;
   background: url(skyline.jpg) no-repeat center center;
   background-size: cover;
   border: 3px solid rgb(125, 159, 182);
@@ -185,19 +185,30 @@ footer {
   margin-left: 10px;
 }
 
+.weekly-forecast-header {
+  font-size: 20px;
+  margin: 50px 0 0 0;
+  padding-left: 10px;
+}
+
 .weather-forecast-weekly {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   margin-top: 20px;
-  font-size: 14px;
+  font-size: 12px;
+  margin: 0 5px 0 5px;
 }
 
 .row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  overflow: hidden;
 }
 
 .col-2 {
+  text-align: center;
   backdrop-filter: blur(10px);
   border-radius: 30px;
-  padding: 10px;
+  padding: 8px 3px 8px 3px;
+  margin: 3px;
+  border: 1px solid #fff;
 }

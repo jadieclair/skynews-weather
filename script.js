@@ -86,4 +86,34 @@ function showTime(date) {
   return `${hours}h${minutes}`;
 }
 
+function showForecast() {
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri"];
+  let forecastHTML = "";
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+         <div class="row">
+              <div class="col-2">
+                <div class="weather-forecast-day">${day}</div>
+                <img
+                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-night.png"
+                  width="40px"
+                  alt=""
+                />
+                <div>
+                  <span class="weather-forecast-max"> 18 </span>
+                  <span class="weather-forecast-min"> 12 </span>
+                </div>
+              </div>
+            </div>
+`;
+  });
+
+  let forecastElement = document.querySelector("#weekly-forecast");
+  forecastElement.innerHTML = forecastHTML;
+}
+
 fetchTemp("London");
+showForecast();
